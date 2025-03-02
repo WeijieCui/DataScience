@@ -36,3 +36,15 @@ nums <- list_1 <- list(1, 2, 3)
 # 3.6 Performance: Vectors are faster than lists.
 # 3.7 Use cases: Vectors are used for mathematical operations, while lists are used for storing different types of data.
 # 3.8 Conversion: Vectors can be converted to lists using the as.list() function, while lists can be converted to vectors using the unlist() function.
+
+
+for (row in list(
+  list(Matrix(0,2,2),0),
+  list(Matrix(1,2,2),1),
+  list(Matrix(2,2,2),2)
+)){
+  matrix <- row[1]
+  num <- row[2]
+  print(matrix)
+  print(num)
+}

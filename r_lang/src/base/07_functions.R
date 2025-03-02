@@ -65,4 +65,4 @@ factorial <- function(n) {
   }
 }
 
-factorial(-5)
+factorial(5)
