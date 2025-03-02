@@ -1,0 +1,16 @@
+id
+age
+sex
+origin
+cp chest pain type
+trestbps resting blood pressure
+chol
+fbs
+restecg
+thalach
+exang
+oldpeak
+slope
+ca
+thal
+num
