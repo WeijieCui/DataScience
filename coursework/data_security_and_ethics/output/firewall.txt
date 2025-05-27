@@ -1,0 +1,18 @@
+::::::::::::::
+firewall.txt (inventive)
+sudo ufw status verbose
+::::::::::::::
+Status: active
+Logging: on (low)
+Default: deny (incoming), deny (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+443                        ALLOW FWD   192.168.30.20             
+5000                       ALLOW FWD   192.168.30.10             
+192.168.30.10 5000         LIMIT FWD   Anywhere                  
+192.168.30.30 4500         ALLOW FWD   Anywhere                  
+192.168.30.30 500          ALLOW FWD   Anywhere                  
+192.168.30.30 22           LIMIT FWD   Anywhere                  
+Anywhere                   ALLOW FWD   192.168.30.30             

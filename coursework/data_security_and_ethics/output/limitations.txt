@@ -1,0 +1,23 @@
+ 1. If an attacker somehow compromised the public game server, he would be behind the firewall and
+ able to attack the development workstation. Therefore it would be desirable to block outgoing
+ connections from the game server to the workstation. Why will this not work with the setup in
+ this scenario?
+
+Answer: 
+The protective measures does not work because the firewall only limits the connection between the external network and the internal servers. As the internal servers are in the same LAN, there are no restrictions on their connection. Therefore, after the game server is attacked, it can be used as a site to attack any internal server without being restricted by the firewall. After the development workstation is compromised, the program can directly or secretly send sensitive information to the outside through port 443.
+
+
+
+ 2. The boss of the company notices that the developer wastes much of his time looking at social
+ media and asks you to configure the firewall to block access from the workstation to popular
+ social media websites. Why will this be difficult with ufw? Would it be possible with a different
+ firewall? Explain your answer.
+
+Answer:
+UFW is challenging to block access to social media websites for some reasons:
+  1) Dynamic IP Addresses: for the best performance and stability, most of modern social media websites use Content Delivery Networks (CDNs), load balancers and constantly changing IP addresses.Therefore, UFW, based on IP settings, cannot take effect in time.
+  2) HTTPS Encryption: Modern websites use HTTPS for safety, so UFW could not inspect or block specific URLs.
+
+There are some alternative firewall solutions:
+  1) Deep Packet Inspection (DPI): Open source firewalls like pfSense, or commercial solutions such as Palo Alto can inspect the TLS Server Name Indication (SNI) field in HTTPS traffic to identify domains without decrypting the payload. This allows blocking based on domain names.
+  2) DNS Filtering: Tools like Pi-hole or firewalls with DNS-layer security can block DNS resolutions for social media domains, preventing the workstation from resolving their IPs.
