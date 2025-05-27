@@ -52,15 +52,8 @@ rsconnect/
 *.iml
 
 # data
-*.txt
-*.csv
-*.pdf
-*.xls
-*.xlsx
-*.png
-*.jpg
-*.jpeg
 *.gif
 *.svg
 *.tiff
 *.tif
+/coursework/CS231n Deep Learning for Computer Vision/
